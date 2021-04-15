@@ -4,9 +4,9 @@
 # proative_user_manager.sh
 # Versao: 2.0
 # Analista N2: Sergio Silva
-# E-mail: sergio.silva@proativetec.com.br
-# Tel: 11 4130-8818
-# Proative Technology
+# E-mail: 
+# Tel: 
+#  Technology
 
 
 
