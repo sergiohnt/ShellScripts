@@ -93,7 +93,7 @@ case $RESP in
 	0)
 	LOGO
 	echo ""
-	echo -e "Sindo sem executar"
+	echo -e "Saindo sem executar"
 	exit 0
 	;;
 	
@@ -116,7 +116,8 @@ case $RESP in
 		    then
 		    	# Cria usuario com LOGIN, SENHA, COMENTARIO e forca alteracao de SENHA no primeiro LOGIN
 		    	useradd -c "$NAME" -G sudo -p $SENHA $LOGIN
-		    	chpasswd ${LOGIN}:${SENHA}
+		    	echo "$LOGIN:$SENHA" > /root/Ltemp 
+					chpasswd < /root/Ltemp
 		    	passwd -e $LOGIN
 		
 		   	# Adiciona os LOGINS e SENHAS ao arquivo /root/logins.txt
@@ -222,6 +223,7 @@ rm -r $DIR/lista.csv
 rm -r $DIR/lista.csv.bak
 rm -f /tmp/usuarios_sistema.tmp
 rm -f /root/logins.txt
+rm -f /root/Ltemp
 
 #
 ##	FIM
