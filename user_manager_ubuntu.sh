@@ -121,7 +121,7 @@ case $RESP in
 		    	passwd -e $LOGIN
 		
 		   	# Adiciona os LOGINS e SENHAS ao arquivo /root/logins.txt
-		   	echo "$LOGIN    $SENHA" >> /root/logins.txt 
+		   	echo "$LOGIN		$SENHA" >> /root/logins.txt 
 	    	    else
 			echo "$LOGIN ja existe no S.O." >> /root/logins.txt 
 		fi
