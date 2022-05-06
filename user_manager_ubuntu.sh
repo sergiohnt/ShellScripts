@@ -116,7 +116,7 @@ case $RESP in
 		    then
 		    	# Cria usuario com LOGIN, SENHA, COMENTARIO e forca alteracao de SENHA no primeiro LOGIN
 		    	useradd -c "$NAME" -G sudo -p $SENHA $LOGIN
-		    	echo -e "$SENHA" |passwd --stdin $LOGIN
+		    	chpasswd ${LOGIN}:${SENHA}
 		    	passwd -e $LOGIN
 		
 		   	# Adiciona os LOGINS e SENHAS ao arquivo /root/logins.txt
