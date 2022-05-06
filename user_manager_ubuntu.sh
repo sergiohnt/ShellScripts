@@ -116,6 +116,7 @@ case $RESP in
 		    then
 		    	# Cria usuario com LOGIN, SENHA, COMENTARIO e forca alteracao de SENHA no primeiro LOGIN
 		    	echo 'y' | adduser $LOGIN --disabled-password --quiet
+					usermod -aG sudo $LOGIN
 		    	echo "$LOGIN:$SENHA" > /root/Ltemp 
 					chpasswd < /root/Ltemp
 		    	passwd -e $LOGIN
