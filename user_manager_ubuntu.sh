@@ -115,7 +115,7 @@ case $RESP in
 		if [ "$VERIFICALOGIN" != "$LOGIN" ]
 		    then
 		    	# Cria usuario com LOGIN, SENHA, COMENTARIO e forca alteracao de SENHA no primeiro LOGIN
-		    	useradd -c "$NAME" -G sudo -p $SENHA $LOGIN
+		    	useradd -c -m "$NAME" -G sudo -p $SENHA $LOGIN
 		    	echo "$LOGIN:$SENHA" > /root/Ltemp 
 					chpasswd < /root/Ltemp
 		    	passwd -e $LOGIN
